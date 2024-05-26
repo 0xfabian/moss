@@ -53,10 +53,6 @@ public class Patient implements CSVSerializable {
         this.dob = dob;
     }
 
-    public LocalDate getDOB() {
-        return dob;
-    }
-
     public void setEmail(String email) {
         for (Patient patient : MedicalOffice.getInstance().patients.getList())
             if (patient.getEmail().equals(email))
