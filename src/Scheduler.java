@@ -50,6 +50,9 @@ public class Scheduler {
 
             LocalDateTime currentTime = currentDate.atTime(shiftStart);
 
+            if (currentTime.isBefore(LocalDateTime.now()))
+                currentTime = LocalDateTime.now().withMinute(0).withSecond(0).withNano(0).plusHours(1);
+
             while (currentTime.toLocalTime().isBefore(shiftEnd)) {
                 boolean slotAvailable = true;
 
